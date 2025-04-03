@@ -5,8 +5,9 @@ class Solution {
         for(int i=0;i<nums.length;i++){
             int remen=target-nums[i];
             if(Hm.containsKey(remen)){
-                ans[0]=Hm.get(remen);
-                ans[1]=i;
+                ans[0]=i;
+                ans[1]=Hm.get(remen);
+                
                 
                 return ans;
             }
