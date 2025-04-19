@@ -19,9 +19,9 @@ class Solution {
             if(prev!=null && temp.val==val){
                 prev.next=temp.next;
                 temp=temp.next;
-               // break;
+                //break;
             }
-            else{            
+            else{
             prev=temp;
             temp=temp.next;
             }
