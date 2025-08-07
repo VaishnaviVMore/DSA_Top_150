@@ -29,14 +29,15 @@ class Solution {
         ListNode newNode=reverse(slow.next);
         ListNode first=head;
         ListNode last=newNode;
+        boolean flag =true;
         while(last!=null){
             if(first.val!=last.val){
                 reverse(newNode);
-                return false;
+                flag=false;
             }
             first=first.next;
             last=last.next;
         }
-        return true;
+        return flag;
     }
 }
