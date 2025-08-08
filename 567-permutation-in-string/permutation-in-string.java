@@ -19,8 +19,8 @@ class Solution {
         int windsize = s1.length();
         for (int i = 0; i <= s2.length() - windsize; i++) {
             int[] wind = new int[26];
-            for (int j = 0; j < windsize; j++) {
-                wind[s2.charAt(i + j) - 'a']++;
+            for (int j = i; j < i+windsize; j++) {
+                wind[s2.charAt(j) - 'a']++;
             }
             if (matches(freq, wind)) {
                 return true;
