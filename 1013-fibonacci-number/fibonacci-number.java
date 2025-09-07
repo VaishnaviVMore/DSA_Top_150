@@ -6,7 +6,7 @@ class Solution {
     if(f[n]!=0){
         return f[n];
     }
-    f[n]=fib(n-1)+fib(n-2);
+    f[n]=helper(n-1,f)+helper(n-2,f);
     return f[n];
     }
     public int fib(int n) {
