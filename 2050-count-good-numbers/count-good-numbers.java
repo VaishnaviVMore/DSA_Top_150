@@ -1,5 +1,5 @@
 class Solution {
-    private static final int MOD = 1000000007;
+    private static int MOD = 1000000007;
     public long pow(long base, long ex) {
         if (ex == 0) return 1;
         long halfpow = pow(base, ex / 2) % MOD;
