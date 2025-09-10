@@ -4,16 +4,16 @@ class Solution {
         int left=0;
         int right=n-1;
         int maxi=Integer.MIN_VALUE;
-        while(left<right){
-            int hei=Math.min(height[left],height[right]);
-            int width=right-left;
-            int area=hei*width;
-            maxi=Math.max(maxi,area);
-            if(height[left]<height[right]){
-                left++;
+        while(left<=right){
+            int wid=right-left;
+            int hei=Math.min(height[right],height[left]);
+            int area=wid*hei;
+             maxi=Math.max(maxi,area);
+            if(height[left]>height[right]){
+                right--;
             }
             else{
-                right--;
+                left++;
             }
         }
         return maxi;
