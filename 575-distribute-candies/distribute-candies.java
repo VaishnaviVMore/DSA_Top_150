@@ -10,11 +10,6 @@ class Solution {
             }
         }
         int mintype=n/2;
-        if(mintype>maxtype){
-            return maxtype;
-        }
-        else{
-            return mintype;
-        }
+       return Math.min(maxtype,mintype);
     }
 }
