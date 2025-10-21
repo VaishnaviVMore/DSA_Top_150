@@ -1,20 +1,19 @@
 class Solution {
     public int[] twoSum(int[] numbers, int target) {
         int n=numbers.length;
-        int i=0;int j=n-1;
+        int left=0;int right=n-1;
         int[] result={-1,-1};
-        while(i<j){
-            int sum=numbers[i]+numbers[j];
+        while(left<right){
+            int sum=numbers[left]+numbers[right];
             if(sum==target){
-                result[0]=i+1;
-                result[1]=j+1;
+                result[0]=left+1;result[1]=right+1;
                 return result;
             }
-            else if(sum>target){
-                j--;
+            else if(sum<target){
+                left++;
             }
             else{
-                i++;
+                right--;
             }
         }
         return result;
