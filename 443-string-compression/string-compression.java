@@ -1,21 +1,23 @@
 class Solution {
     public int compress(char[] chars) {
-        int read=0;
-        int write=0;
-        while(read<chars.length){
+        int n=chars.length;
+        int ind=0;
+        int i=0;
+        while(i<n){
+            char ch=chars[i];
             int count=0;
-            char currch=chars[read];
-            while(read<chars.length && chars[read]==currch){
-                read++;
+            while(i<n && chars[i]==ch){
                 count++;
+                i++;
             }
-            chars[write++]=currch;
-             if(count>1){
-            for(char inti : Integer.toString(count).toCharArray()){
-                chars[write++]=inti;
+                chars[ind++]=ch;
+            if(count>1){
+                String str=Integer.toString(count);
+                for(char digit: str.toCharArray()){
+                    chars[ind++]=digit;
+                }
             }
         }
-        }
-        return write;
+        return ind;
     }
 }
