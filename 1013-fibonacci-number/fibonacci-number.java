@@ -3,6 +3,14 @@ class Solution {
         if(n==0||n==1){
             return n;
         }
-        return fib(n-1)+fib(n-2);
+        int fnm1=1;
+        int fnm2=0;
+        int fn=0;
+        for(int i=2;i<=n;i++){
+            fn=fnm1+fnm2;
+            fnm2=fnm1;
+            fnm1=fn;
+        }
+        return fn;
     }
 }
