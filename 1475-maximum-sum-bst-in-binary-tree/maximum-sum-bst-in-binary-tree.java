@@ -2,8 +2,13 @@ class Solution {
     int result = 0;   // GLOBAL variable
 
     public int maxSumBST(TreeNode root) {
-        helper(root);
+        if (root == null) {
+            return 0;
+        }
+        else{
+             helper(root);
         return result;
+        }
     }
 
     // returns {minValue, maxValue, sum}
