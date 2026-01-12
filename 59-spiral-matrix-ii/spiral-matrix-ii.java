@@ -1,20 +1,28 @@
 class Solution {
     public int[][] generateMatrix(int n) {
-
-       int[][] arr=new int[n][n];
-       int srow=0;
-       int erow=n-1;
-       int scol=0;
-       int ecol=n-1; int val=1;
-       while(srow<=erow && scol<=ecol){
-        for(int i=scol;i<=ecol;i++) arr[srow][i]=val++;
-        for(int j=srow+1;j<=erow;j++) arr[j][erow]=val++;
-        if(srow<erow && scol<ecol){
-            for(int k=ecol-1;k>=scol;k--) arr[erow][k]=val++;
-            for(int l=erow-1;l>=srow+1;l--) arr[l][scol]=val++;
+        int startrow=0;
+        int startcol=0;
+        int endcol=n-1;
+        int endrow=n-1;
+        //ArrayList<Integer> List=new ArrayList<>();
+        int[][] grid=new int[n][n];
+        int val=1;
+        //for(int i=startcol;i)
+        while(startrow<=endrow && startcol<=endcol){
+            //top
+            for(int i=startcol;i<=endcol;i++){
+                grid[startrow][i]=val++;
+            }
+            //left
+            for(int j=startrow+1;j<=endrow;j++){
+                grid[j][endcol]=val++;
+            }
+            if(startrow<endrow && startcol<endcol){
+                for(int i=endcol-1;i>=startcol;i--) grid[endrow][i]=val++;
+                for(int j=endrow-1;j>=startrow+1;j--) grid[j][startrow]=val++;
+            }
+            startrow++;endrow--;startcol++;endcol--;
         }
-        srow++;erow--;scol++;ecol--;
-       }
-       return arr;
+        return grid;
     }
 }
